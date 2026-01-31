@@ -41,8 +41,8 @@ function Header() {
         <FaUserCircle size={35} color="green" />
         <div className="group-hover:flex font-bold gap-y-2 bg-gray-400 rounded-sm flex-col p-5 absolute hidden">
           <NavLink to="/profile" className="hover:underline">Profile</NavLink>
-          <NavLink to="/profile" className="hover:underline">Login</NavLink>
-          <NavLink to="/profile" className="hover:underline">Register</NavLink>
+          <NavLink to="/login" className="hover:underline">Login</NavLink>
+          <NavLink to="/register" className="hover:underline">Register</NavLink>
         </div>
       </div>
     </nav>
