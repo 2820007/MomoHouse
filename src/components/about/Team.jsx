@@ -1,16 +1,17 @@
-import React from 'react'
+import React from "react";
 
-
-const Team = () => {
+const Team = ({ team, head }) => {
   return (
-    <div>
-        <div>
-            
-        </div>
-        <div></div>
+    <div className="relative w-fit">
+      {/* Image */}
+      <img src={team} alt="team" className="w-full" />
 
+      {/* Text overlay at bottom */}
+      <div className="absolute bottom-0 left-0 w-full shadow-4xl shadow-black text-white px-4 py-2">
+        <h3 className="font-bold text-2xl">{head}</h3>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

@@ -10,6 +10,9 @@ import Second from '../components/about/Second';
 import Video from '../components/about/Video';
 import Testmonial from '../components/about/Testmonial';
 import Team from '../components/about/Team';
+import team1 from "../assets/team1.png"
+import team2 from "../assets/team2.png"
+import team3 from "../assets/team3.png"
 
 
 
@@ -104,7 +107,27 @@ const About = () => {
       <p className='text-center  text-teal-600 font-bold'>Our talented team member who delivers only best results.</p>
     </div>
 
-       <Team/>
+       <div className='flex justify-center gap-x-4 p-10'>
+        <Team
+        team={team1}
+        head={<>
+        Head Chef
+        </>}
+        />
+         <Team
+        team={team2}
+        head={<>
+        Assistant Chef
+        </>}
+        />
+         <Team
+        team={team3}
+        head={<>
+        Assistant Chef
+        </>}
+        />
+
+       </div>
 
 
       
