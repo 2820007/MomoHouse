@@ -29,7 +29,7 @@ const Footer = () => {
 
           {/* MOMOS LINKS */}
           <div className="flex flex-col items-center md:items-start">
-            <h2 className="font-semibold text-gray-800 mb-4">momos</h2>
+            <h2 className="font-semibold  text-teal-600 mb-4">momos</h2>
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li><NavLink to="/about">About Us</NavLink></li>
               <li><NavLink to="/menu">Our Menu</NavLink></li>
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* LEGALS */}
           <div className="flex flex-col items-center md:items-start">
-            <h2 className="font-semibold text-gray-800 mb-4">Legals</h2>
+            <h2 className="font-semibold  text-teal-600 mb-4">Legals</h2>
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li><NavLink>Terms & Conditions</NavLink></li>
               <li><NavLink>Privacy Policy</NavLink></li>
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* FOLLOW US */}
           <div className="flex flex-col items-center">
-            <h2 className="font-semibold text-gray-800 mb-4">Follow Us</h2>
+            <h2 className="font-semibold  text-teal-600 mb-4">Follow Us</h2>
 
            
             <div className="flex justify-center gap-4 mb-4">
