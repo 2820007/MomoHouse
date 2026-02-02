@@ -11,7 +11,7 @@ const Testimonial = () => {
         <img src={test} alt="" className="w-full h-full object-cover" />
 
         {/* Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center px-16 text-white">
+        <div className="absolute  top-30 left-40 flex flex-col justify-center px-16 text-white">
           <span className="text-6xl mb-6">“</span>
 
           <p className="max-w-lg leading-7 mb-6">
