@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { CgArrowRight } from "react-icons/cg";
-import useFetch from "../../hooks/useReciepi";
+
 import { useEffect, useState } from "react";
+import useReciepi from "../../hooks/useReciepi";
 function FilterComponent() {
-  const { isError, isLoading, products } = useFetch();
+  const { isError, isLoading, products } = useReciepi();
+  
   const [filter, setFilter] = useState([]);
-  console.log(isError);
-  console.log(isLoading);
-  console.log(products);
+ 
 
   const filterProduct = (food = "Mexican") => {
     let filterItems = products.filter((item) => {
@@ -66,9 +66,10 @@ function FilterComponent() {
               <div   className="flex flex-wrap gap-5" >
                 {filter?.map((item) => {
                   return (
-                    <div
-                      key={item.id}
-                      className="w-48 shadow-xl shadow-gray-200   rounded-2xl flex flex-col justify-center items-center"
+                    <NavLink to={`/productDetail/${item.id}`}  key={item.id}>
+                      <div
+                      
+                      className="w-48 shadow-xl shadow-gray-200   rounded-2xl flex flex-col justify-center items-center cursor-pointer"
                     >
                       <div>
                         <img
@@ -79,9 +80,10 @@ function FilterComponent() {
                       </div>
                       <div className="p-3">
                         <h1>{item.name}</h1>
-                        <h1>Rs.{item.caloriesPerServing}</h1>
+                        <h1  className="text-orange-600 font-bold">Rs.{item.caloriesPerServing}</h1>
                       </div>
                     </div>
+                    </NavLink>
                   );
                 })}
               </div>

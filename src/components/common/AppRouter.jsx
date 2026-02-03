@@ -10,6 +10,7 @@ import PageNotFound from "./PageNotFound";
 import Services from "../../pages/Services";
 import Allergy from './../../pages/Allergy';
 import Menu from './../../pages/Menu';
+import ProductDetails from "../../pages/ProductDetails";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/allergy" element={<Allergy/>} />
         <Route path="/menu" element={<Menu />} />
+        <Route  path="productDetail/:id" element={<ProductDetails/>}/>
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
