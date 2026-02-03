@@ -9,6 +9,8 @@ import { NavLink } from 'react-router-dom';
 import Video from '../components/home/Video';
 import Card from '../components/home/Card';
 import Filter from '../components/home/FIlter';
+import HappyCustomer from '../components/home/HappyCustomer';
+import GetInTouch from '../components/home/GetInTouch';
 
 const Home = () => {
   return (
@@ -77,6 +79,35 @@ const Home = () => {
           </div>
           </NavLink>
       </div>
+
+
+      {/* Happy customer */}
+      <HappyCustomer/>
+      <GetInTouch/>
+
+      <div>  <div className="relative w-full h-160  overflow-hidden ">
+      
+      {/* Google Map iframe */}
+      <iframe
+        title="google-map"
+        src="https://www.google.com/maps?q=New%20Baneshwor%20Kathmandu&z=16&output=embed"
+        className="w-full h-full border-0"
+        loading="lazy"
+      />
+
+      {/* Center Marker */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
+        <img
+          src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png"
+          alt="marker"
+          className="w-10 h-10"
+        />
+        <div className="mt-1 rounded-md bg-violet-600 px-2 py-1 text-sm font-medium text-white shadow">
+         
+        </div>
+      </div>
+
+    </div></div>
 
 
     </main>
