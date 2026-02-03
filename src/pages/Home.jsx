@@ -1,9 +1,13 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
 import { HiOutlineArrowRight } from "react-icons/hi";
-
+import card1 from "../assets/home/card1.png"
+import party from "../assets/home/party.png"
+import homeChef from "../assets/homeChef.png"
 import man from "../assets/home/man.png"
 import { NavLink } from 'react-router-dom';
+import Video from '../components/home/Video';
+import Card from '../components/home/Card';
 
 const Home = () => {
   return (
@@ -26,6 +30,51 @@ const Home = () => {
           </div>
           </NavLink>
         </div>
+      </div>
+
+      <div className='min-h-96 mt-20 text-center text-4xl'>Menu</div>
+      <Video/>
+
+      <div className='flex justify-around '>
+        <Card
+      image={card1}
+      head={<>
+      Quality Food
+      </>}
+      para={<>
+      Only the best food with top quality <br /> products and ingredients
+      </>}
+      />
+       <Card
+      image={party}
+      head={<>
+      Private Party
+      </>}
+      para={<>
+      Get the best food for all your <br /> parties and 
+      gathering
+      </>}
+      />
+       <Card
+      image={homeChef}
+      head={<>
+      Categring
+      </>}
+      para={<>
+    Get the best food  for any occasions <br /> and gathering
+      </>}
+      />
+      
+      </div>
+      <div className='flex justify-center mb-20'>
+        <NavLink to="/services">
+            <div className='flex gap-x-2  items-center bg-teal-600 rounded-4xl  px-4 py-4 w-70 text-center text-white cursor-pointer hover:bg-teal-900'>
+            <button >Explore Our Story
+           
+          </button>
+           <HiOutlineArrowRight/>
+          </div>
+          </NavLink>
       </div>
 
 
