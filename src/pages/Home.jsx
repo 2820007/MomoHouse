@@ -8,6 +8,7 @@ import man from "../assets/home/man.png"
 import { NavLink } from 'react-router-dom';
 import Video from '../components/home/Video';
 import Card from '../components/home/Card';
+import Filter from '../components/home/FIlter';
 
 const Home = () => {
   return (
@@ -32,7 +33,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='min-h-96 mt-20 text-center text-4xl'>Menu</div>
+     <Filter/>
       <Video/>
 
       <div className='flex justify-around '>
