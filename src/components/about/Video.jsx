@@ -1,6 +1,7 @@
 import React from "react";
 import video from "../../assets/video1.png";
 import { FaPlayCircle } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 
 const Video = () => {
@@ -21,10 +22,12 @@ const Video = () => {
           </h2>
           <p className="text-white font-semibold mb-4">See how we making the momos that you like form best in gredients </p>
 
+          
+          <NavLink to="https://www.youtube.com/watch?v=8jHu5X_KgjY">
           <button className="bg-[#0C6967] flex items-center w-50 gap-x-1 text-white px-4 py-4 rounded-full hover:bg-teal-900 transition cursor-pointer">
             <FaPlayCircle size={20}/>
             Watch the Video
-          </button>
+          </button></NavLink>
         </div>
       </div>
     </div>

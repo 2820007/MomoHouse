@@ -5,13 +5,14 @@ import Footer from './components/common/Footer'
 
 const App = () => {
   return (
-    <div className='bg-gray-100'>
-      <Header/>
-      <div className='min-h-125'>
-        <AppRouter/>
-       
-      </div>
-       <Footer/>
+    <div className="bg-white min-h-screen">
+      <Header />
+
+      <main className="min-h-[calc(100vh-200px)]">
+        <AppRouter />
+      </main>
+
+      <Footer />
     </div>
   )
 }

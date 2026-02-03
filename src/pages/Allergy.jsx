@@ -1,9 +1,9 @@
 import React from 'react'
 import AllergyCom from '../components/about/Allergy'
-import first from "../assets/first.png"
+import chef from "../assets/services/service.png"
 import vector from "../assets/allergy/vector.png"
 import spices from "../assets/allergy/spices.png"
-
+import brush from "../assets/allergy/BRUSHES.png"
 
 
 const Allergy = () => {
@@ -11,38 +11,40 @@ const Allergy = () => {
     <div>
   
       <div>
-        <div className="  flex justify-between p-10 pl-60 pr-40 bg-white ">
+        <div className="  flex justify-between p-10 pl-60 pr-40 bg-white mt-20 ">
         <div className=" flex flex-col justify-center mb-20 gap-15 w-180 ">
           <div className=" text-[50px] font-bold">
-            <h2>Allergy Advices</h2>
+            <h2 className='text-teal-600'>Allergy Advices</h2>
           </div>
 
           <div className=" space-y-2">
             <p className="text-[#6B788E] text-[20px] tracking-wide ">AT OUT RESTAURANT</p>
             <div>
-              <h3 className="text-4xl font-bold text-[#101828]">
-                We use only the freshest and highest quality ingredients in all our dishes,
+              <h3 className="text-2xl font-bold text-[#101828]">
+                We use only the freshest and highest  <br />
+                quality ingredients in all our dishes,
               </h3>
-              <h3 className="text-4xl font-bold text-orange-600 ">
-               and offer transparency in our ingredient labeling.
+              <h3 className="text-2xl font-bold text-orange-600 ">
+               and offer transparency in our ingredient  <br />
+               labeling.
               </h3>
             </div>
           </div>
         </div>
-        <div className="">
-          <img src={first} alt="" />
-        </div>
+        <div className='mt-6 lg:mt-0'>
+                        <img src={chef} alt="about1" className='w-114 h-157.57 object-cover rounded-lg' />
+                      </div>
       </div>
 
       <div className="bg-white  relative">
   {/* Heading */}
-  <div className='flex justify-center items-center gap-4'>
-        <img className='h-2' src="src/img/BRUSHES.png" alt="" />
+  <div className='flex justify-center items-center gap-4 mb-100'>
+        <img className='h-2' src={brush} alt="" />
 
     <h1 className="text-4xl p-10 font-bold text-center text-orange-600">
     Ingredients <span className="text-[#101828]">used</span>
   </h1>
-      <img className='h-2' src="src/img/BRUSHES.png" alt="" />
+      <img className='h-2' src={brush} alt="" />
 
   </div>
   
