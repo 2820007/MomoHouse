@@ -10,7 +10,10 @@ import PageNotFound from "./PageNotFound";
 import Services from "../../pages/Services";
 import Allergy from './../../pages/Allergy';
 import Menu from './../../pages/Menu';
-import ProductDetails from "../../pages/ProductDetails";
+
+import ProductDetailPage from "../../pages/ProductDetailsPage";
+
+import Cart from './../../pages/Cart';
 
 const AppRouter = () => {
   return (
@@ -24,7 +27,9 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/allergy" element={<Allergy/>} />
         <Route path="/menu" element={<Menu />} />
-        <Route  path="productDetail/:id" element={<ProductDetails/>}/>
+        <Route path="cartPage" element={<Cart/>}/>
+        {/* <Route  path="productDetail/:id" element={<ProductDetails/>}/> */}
+        <Route  path="productDetail" element={<ProductDetailPage/>}/>
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

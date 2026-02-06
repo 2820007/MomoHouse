@@ -5,6 +5,8 @@ import { IoLogoFacebook } from "react-icons/io5";
 import { FaTiktok } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
+
 
 function Header() {
   return (
@@ -13,11 +15,15 @@ function Header() {
         <img src={momologo} alt="momo_logo" />
         <h1 className="text-[#0C6967] font-bold text-2xl  ">momos</h1>
       </NavLink>
-      <div className="space-x-8">
+      <div className="space-x-8 flex items-center">
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/menu">Our Menu</NavLink>
         <NavLink to="/services">Our Services </NavLink>
         <NavLink to="/allergy">Allergy Advice </NavLink>
+        <NavLink to="/cartPage">
+        <FaCartPlus size={20} color="red"/>
+         </NavLink>
+        
       </div>
       <div className="flex items-center   gap-x-7 ">
         <NavLink to="https://www.facebook.com/" target="_blank">

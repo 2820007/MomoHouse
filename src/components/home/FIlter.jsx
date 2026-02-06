@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { CgArrowRight } from "react-icons/cg";
 
 import { useEffect, useState } from "react";
 import useReciepi from "../../hooks/useReciepi";
 function FilterComponent() {
+  const navigate=useNavigate()
   const { isError, isLoading, products } = useReciepi();
   
   const [filter, setFilter] = useState([]);
@@ -66,24 +67,35 @@ function FilterComponent() {
               <div   className="flex flex-wrap gap-5" >
                 {filter?.map((item) => {
                   return (
-                    <NavLink to={`/productDetail/${item.id}`}  key={item.id}>
-                      <div
-                      
-                      className="w-48 shadow-xl shadow-gray-200   rounded-2xl flex flex-col justify-center items-center cursor-pointer"
-                    >
-                      <div>
-                        <img
-                          className="   rounded-t-2xl w-full"
-                          src={item.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className="p-3">
-                        <h1>{item.name}</h1>
-                        <h1  className="text-orange-600 font-bold">Rs.{item.caloriesPerServing}</h1>
-                      </div>
-                    </div>
-                    </NavLink>
+                   
+  <div key={item.id} 
+  onClick={()=>{
+              
+              navigate("/productDetail",{state:item})
+             }}
+  
+  className="w-48 h-72  shadow-xl shadow-gray-200 rounded-2xl 
+                  flex flex-col overflow-hidden cursor-pointer">
+    
+    {/* Image */}
+    <div className="h-48 w-full">
+      <img
+        className="h-full w-full object-cover"
+        src={item.image}
+        alt={item.name}
+      />
+    </div>
+
+    {/* Content */}
+    <div className="p-3 flex flex-col justify-between flex-1 text-center">
+      <h1 className="font-semibold line-clamp-2">{item.name}</h1>
+      <h1 className="text-orange-600 font-bold">
+        Rs. {item.caloriesPerServing}
+      </h1>
+    </div>
+  </div>
+
+
                   );
                 })}
               </div>

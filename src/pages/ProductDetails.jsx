@@ -55,7 +55,7 @@ const ProductDetails = () => {
             <p className="text-lg font-semibold">
               Price:
               <span className="text-red-600">
-Rs.{products.caloriesPerServing}
+             Rs.{products.caloriesPerServing}
               </span>
             </p>
 

@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import useReciepi from "../hooks/useReciepi";
 
 function Menu() {
+  const navigate=useNavigate()
   const { isError, isLoading, products } = useReciepi();
 
   if (isLoading && !isError) {
@@ -18,6 +19,7 @@ function Menu() {
   const pakistani = products?.filter(item => item.cuisine === "Pakistani");
 
   const renderSection = (title, data) => (
+    
     data?.length > 0 && (
       <div className="mb-16">
         <h2 className="text-2xl font-bold text-center mb-8 text-[#0C6967]">
@@ -26,14 +28,18 @@ function Menu() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {data.map(item => (
-           <NavLink to={`/productDetail/${item.id}`}  key={item.id}>
-             <div
+           
+             <div onClick={()=>{
+              
+              navigate("/productDetail",{state:item})
+             }}
+              key={item.id}
              
-              className="w-52 bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+              className="w-52 h-70  bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
             >
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.name}w
                 className="h-48 w-full object-cover"
               />
 
@@ -44,7 +50,7 @@ function Menu() {
                 </p>
               </div>
             </div>
-           </NavLink>
+          
           ))}
         </div>
       </div>
