@@ -6,9 +6,17 @@ import { FaTiktok } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 function Header() {
+  const { state } = useContext(CartContext);
+  const { cartItems } = state;
+   const totalItem=cartItems.reduce((acc,item)=>{
+  return acc+item.qty
+
+ },0)
   return (
     <nav className=" bg-white flex  justify-around p-5   items-center  ">
       <NavLink to="/" className="flex items-center  gap-x-3 ">
@@ -20,9 +28,18 @@ function Header() {
         <NavLink to="/menu">Our Menu</NavLink>
         <NavLink to="/services">Our Services </NavLink>
         <NavLink to="/allergy">Allergy Advice </NavLink>
-        <NavLink to="/cartPage">
-        <FaCartPlus size={20} color="red"/>
-         </NavLink>
+        <NavLink to="/cartPage" className="relative">
+
+  <FaCartPlus size={25} color="red" />
+
+ 
+  {totalItem > 0 && (
+    <span className="absolute -top-2 -right-2 bg-gray-400 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md">
+      {totalItem}
+    </span>
+  )}
+</NavLink>
+
         
       </div>
       <div className="flex items-center   gap-x-7 ">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 const useReciepi = () => {
     const [products,setProducts]=useState([])
@@ -11,6 +11,7 @@ const useReciepi = () => {
             setIsLoading(true)
             let res= await fetch('https://dummyjson.com/recipes')
             res=await res.json()
+            // console.log(res)
             setProducts(res.recipes)
             setIsLoading(false)
             setIsError(false)
