@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './context/CartContext.jsx'
 import { ToastContainer } from 'react-toastify'
+import { Auth0Provider } from '@auth0/auth0-react';
 
 createRoot(document.getElementById('root')).render(
  
@@ -20,7 +21,18 @@ createRoot(document.getElementById('root')).render(
         draggable
         theme="light"
       />
-       <App />
+
+        <Auth0Provider
+      domain="dev-ls7gt7zfhd0al3ue.us.auth0.com"
+      clientId="M92J1rzKSGQUZRaTlOU8BlMQWIeONDvW"
+      authorizationParams={{
+      redirect_uri: window.location.origin
+
+      }}
+    >
+      <App />
+    </Auth0Provider>
+
    </CartProvider>
     
    </BrowserRouter>

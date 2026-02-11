@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { TiMinus } from "react-icons/ti";
 import { TiPlus } from "react-icons/ti";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 function ProductDetailPage() {
+  const navigate=useNavigate()
    const { dispatch } = useContext(CartContext);
   const { state } = useLocation();   
   const [counter, setCounter] = useState(1);
@@ -46,14 +47,18 @@ function ProductDetailPage() {
               onClick={() => {
                 setCounter(counter + 1);
               }}
-              className="bg-gray-400  hover:bg-gray-100 w-8 p-1 flex  justify-center items-center h-8"
+              className="bg-gray-400  hover:bg-gray-100 w-8 p-1 flex  justify-center items-center h-8 cursor-pointer"
             >
               <TiPlus />
             </button>
           </div>
 
           <div className="space-x-3">
-            <button className="bg-[#2abbe8]  p-3 w-48 text-white rounded-sm ">
+            <button
+               onClick={()=>{
+                navigate("/eshewa",{state:counter*state.caloriesPerServing})
+               }}
+             className="bg-[#2abbe8]  p-3 w-48 text-white rounded-sm cursor-pointer ">
               Buy Now
             </button>
             <button onClick={()=>{

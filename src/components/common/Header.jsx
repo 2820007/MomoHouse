@@ -8,6 +8,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 function Header() {
@@ -17,31 +18,30 @@ function Header() {
   return acc+item.qty
 
  },0)
+   const { isLoading, logout, isAuthenticated, user } = useAuth0();
   return (
-    <nav className=" bg-white flex  justify-around p-5   items-center  ">
+    <nav className="  border-b border-b-gray-300  bg-white flex  justify-around p-5   items-center  ">
       <NavLink to="/" className="flex items-center  gap-x-3 ">
         <img src={momologo} alt="momo_logo" />
         <h1 className="text-[#0C6967] font-bold text-2xl  ">momos</h1>
       </NavLink>
-      <div className="space-x-8 flex items-center">
+      <div className="space-x-8   flex items-center ">
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/menu">Our Menu</NavLink>
         <NavLink to="/services">Our Services </NavLink>
         <NavLink to="/allergy">Allergy Advice </NavLink>
-        <NavLink to="/cartPage" className="relative">
 
-  <FaCartPlus size={25} color="red" />
-
- 
-  {totalItem > 0 && (
-    <span className="absolute -top-2 -right-2 bg-gray-400 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md">
-      {totalItem}
-    </span>
-  )}
-</NavLink>
-
-        
+        <NavLink to="/CartPage" className=" relative ">
+          <p
+            className="absolute bottom-4 left-4 flex justify-center
+           items-center text-sm bg-black rounded-full text-white w-6 h-6"
+          >
+            {totalItem}
+          </p>
+          <FaCartPlus size={25} color="red" />
+        </NavLink>
       </div>
+
       <div className="flex items-center   gap-x-7 ">
         <NavLink to="https://www.facebook.com/" target="_blank">
           <IoLogoFacebook size={20} />
@@ -60,16 +60,49 @@ function Header() {
         </NavLink>
       </div>
 
-      <div className="group relative">
-        <FaUserCircle size={35} color="green" />
-        <div className="group-hover:flex font-bold gap-y-2 bg-gray-400 rounded-sm flex-col p-5 absolute hidden">
-          <NavLink to="/profile" className="hover:underline">Profile</NavLink>
-          <NavLink to="/login" className="hover:underline">Login</NavLink>
-          <NavLink to="/register" className="hover:underline">Register</NavLink>
+      <div className="  group relative  ">
+        {!isLoading && isAuthenticated ? (
+          <img
+            className="w-10 rounded-full"
+            src={user?.picture}
+            alt="user_image"
+          />
+        ) : (
+          <FaUserCircle size={35} color="green" />
+        )}
+
+        <div className=" group-hover:flex font-bold  gap-y-2 bg-gray-400 rounded-sm  flex-col p-5   z-50  absolute   hidden  ">
+          {!isLoading && isAuthenticated ? (
+            <>
+              <NavLink to="/profile" className="hover:underline">
+                Profile
+              </NavLink>
+              <button
+                onClick={() => {
+                  logout({
+                    logoutParams: { returnTo:   "http://localhost:5173/", },
+                  });
+                }}
+                className="p-1 font-bold font-sans hover:bg-orange-800 text-white cursor-pointer  rounded-2xl border bg-orange-500 "
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink to="/register" className="hover:underline">
+                Register
+              </NavLink>
+              <NavLink to="/login" className="hover:underline">
+                Login
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </nav>
   );
+
 }
 
 export default Header;
