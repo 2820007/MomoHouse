@@ -1,7 +1,7 @@
 import React from 'react'
 import AllergyCom from '../components/about/Allergy'
 import chef from "../assets/services/service.png"
-import vector from "../assets/allergy/vector.png"
+import vector from "../assets/allergy/Vector.png"
 import spices from "../assets/allergy/spices.png"
 import brush from "../assets/allergy/BRUSHES.png"
 

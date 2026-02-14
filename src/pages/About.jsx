@@ -1,6 +1,6 @@
 import React from 'react';
 import about1 from "../assets/about1.png";
-import First from '../components/about/first';
+import First from '../components/about/First';
 import chef from  "../assets/first.png"
 import momo from  "../assets/second.png"
 import third from "../assets/third.png"
