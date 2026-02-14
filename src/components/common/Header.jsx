@@ -20,7 +20,7 @@ function Header() {
  },0)
    const { isLoading, logout, isAuthenticated, user } = useAuth0();
   return (
-    <nav className="  border-b border-b-gray-300  bg-white flex  justify-around p-5   items-center  ">
+    <nav className="  border-b border-b-gray-300 bg-white flex flex-col md:flex-row justify-between md:justify-around p-5 items-center gap-4 md:gap-0  ">
       <NavLink to="/" className="flex items-center  gap-x-3 ">
         <img src={momologo} alt="momo_logo" />
         <h1 className="text-[#0C6967] font-bold text-2xl  ">momos</h1>

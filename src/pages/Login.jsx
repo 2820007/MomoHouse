@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 
+
 export default function Login() {
   const { loginWithRedirect } = useAuth0();
   const [form, setForm] = useState({
@@ -59,6 +60,9 @@ export default function Login() {
             Continue with Google
           </span>
         </button>
+
+        
+        
 
         <div className="flex items-center my-6">
           <div className="flex-grow border-t" />

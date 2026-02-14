@@ -18,121 +18,126 @@ import team3 from "../assets/team3.png"
 
 const About = () => {
   return (
-    <div className='bg-white'>
-      {/* first part */}
-      <div className='flex flex-col lg:flex-row justify-around items-center pt-10 px-6 lg:px-20'>
-        
-        {/* Text Section */}
-        <div className='flex flex-col gap-y-20 lg:max-w-lg'>
-          {/* Allura font heading */}
-          <div className='flex  flex-col gap-y-20 pl-2'>
-            <h1 className='text-[#0C6967] text-5xl font-allura mb-2'>
-            About Us
-          </h1>
+    <div className='bg-white overflow-hidden'>
 
-          <p className='text-sm text-[#6B788E] -mt-2'>WE PRIDE OURSELF ON</p>
+      {/* First Part */}
+      <div className='flex flex-col lg:flex-row justify-around items-center pt-10 px-6 sm:px-10 lg:px-20 gap-10'>
+
+        {/* Text Section */}
+        <div className='flex flex-col gap-y-10 lg:gap-y-16 lg:max-w-lg text-center lg:text-left'>
+
+          <div className='flex flex-col gap-y-6'>
+            <h1 className='text-[#0C6967] text-4xl sm:text-5xl font-allura'>
+              About Us
+            </h1>
+
+            <p className='text-xs sm:text-sm text-[#6B788E]'>
+              WE PRIDE OURSELF ON
+            </p>
           </div>
 
-         <div>
-           <p className='text-orange-700 text-4xl font-bold'>Our authentic momo recipes</p>
-          <p className='text-black text-4xl font-bold'>Passed down through</p>
-          <p className='text-black text-4xl font-bold'>Generations</p>
-         </div>
+          <div className='space-y-2'>
+            <p className='text-orange-700 text-2xl sm:text-3xl lg:text-4xl font-bold'>
+              Our authentic momo recipes
+            </p>
+            <p className='text-black text-2xl sm:text-3xl lg:text-4xl font-bold'>
+              Passed down through
+            </p>
+            <p className='text-black text-2xl sm:text-3xl lg:text-4xl font-bold'>
+              Generations
+            </p>
+          </div>
         </div>
 
         {/* Image Section */}
-        <div className='mt-6 lg:mt-0'>
-          <img src={about1} alt="about1" className='w-114 h-157.57 object-cover rounded-lg' />
+        <div className='w-full flex justify-center'>
+          <img
+            src={about1}
+            alt="about1"
+            className='w-full max-w-md lg:max-w-lg h-auto object-cover rounded-lg'
+          />
         </div>
       </div>
 
-      {/* video section */}
-      <Video/>
+      {/* Video Section */}
+      <Video />
 
       <div>
-      <First
-        momoimg={momo}
-        chefimg={chef}
-      
-        heading={
-          <>
-            Our momos are <span className="text-orange-500">made</span>
-            <br />
-            <span className="text-orange-500">with love</span>
-          </>
-        }
-        para={
-          <>
-            Lorem ipsum dolor sit amet consectetur. Lectus <br />
-            faucibus lorem ac adipiscing. Leo odio tincidunt <br />
-            ipsum magna lacus viverra tincidunt. Viverra <br />
-            sollicitudin eget dapibus.
-          </>
-        }
-      />
-      <Second/>
-      <First
-      heading={
-        <>
-        Our momos are the perfect <span className="text-orange-500">blend of tradition </span> and <span className="text-orange-500">innovation</span>
-        </>
+        <First
+          momoimg={momo}
+          chefimg={chef}
+          heading={
+            <>
+              Our momos are <span className="text-orange-500">made</span>
+              <br />
+              <span className="text-orange-500">with love</span>
+            </>
+          }
+          para={
+            <>
+              Lorem ipsum dolor sit amet consectetur. Lectus <br />
+              faucibus lorem ac adipiscing. Leo odio tincidunt <br />
+              ipsum magna lacus viverra tincidunt. Viverra <br />
+              sollicitudin eget dapibus.
+            </>
+          }
+        />
 
-      }
-      para={
-        <>
-           Lorem ipsum dolor sit amet consectetur. Lectus <br />
-            faucibus lorem ac adipiscing. Leo odio tincidunt <br />
-            ipsum magna lacus viverra tincidunt. 
-            <br />Viverra aliquet
-            sollicitudin eget dapibus.
-        </>
-      }
-      chefimg={third}
-      momoimg={fourth}
-      
-      />
-    </div>
+        <Second />
 
-    <Testmonial
-    
-    
-    />
+        <First
+          heading={
+            <>
+              Our momos are the perfect{" "}
+              <span className="text-orange-500">blend of tradition </span>
+              and <span className="text-orange-500">innovation</span>
+            </>
+          }
+          para={
+            <>
+              Lorem ipsum dolor sit amet consectetur. Lectus <br />
+              faucibus lorem ac adipiscing. Leo odio tincidunt <br />
+              ipsum magna lacus viverra tincidunt.
+              <br />
+              Viverra aliquet sollicitudin eget dapibus.
+            </>
+          }
+          chefimg={third}
+          momoimg={fourth}
+        />
+      </div>
 
+      <Testmonial />
 
+      {/* Team Section */}
+      <div className='p-6 sm:p-10 text-center'>
+        <h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold mb-4'>
+          Meet The <span className='text-orange-600'>Team</span>
+        </h2>
+        <p className='text-sm sm:text-base text-teal-600 font-bold'>
+          Our talented team member who delivers only best results.
+        </p>
+      </div>
 
-    {/* Team Member */}
-
-    <div className=' p-10' >
-      <h2 className='text-center text-4xl font-bold mb-4'>Meet The <span className='text-orange-600'>Team</span></h2>
-      <p className='text-center  text-teal-600 font-bold'>Our talented team member who delivers only best results.</p>
-    </div>
-
-       <div className='flex justify-center gap-x-4 p-10'>
+      {/* Team Cards */}
+      <div className='flex flex-col sm:flex-row flex-wrap justify-center gap-6 p-6 sm:p-10'>
         <Team
-        team={team1}
-        head={<>
-        Head Chef
-        </>}
+          team={team1}
+          head={<>Head Chef</>}
         />
-         <Team
-        team={team2}
-        head={<>
-        Assistant Chef
-        </>}
+        <Team
+          team={team2}
+          head={<>Assistant Chef</>}
         />
-         <Team
-        team={team3}
-        head={<>
-        Assistant Chef
-        </>}
+        <Team
+          team={team3}
+          head={<>Assistant Chef</>}
         />
+      </div>
 
-       </div>
-
-
-      
     </div>
   );
 }
+
 
 export default About;
